@@ -1,0 +1,232 @@
+.horizontal-border {
+    position: relative;
+    width: 1920px;
+    height: 52px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #ececec;
+  }
+  
+  .horizontal-border .link {
+    position: absolute;
+    width: 85px;
+    height: 22px;
+    top: 14px;
+    left: 64px;
+  }
+  
+  .horizontal-border .list {
+    position: absolute;
+    width: 345px;
+    height: 52px;
+    top: 0;
+    left: 175px;
+  }
+  
+  .horizontal-border .item {
+    width: 94px;
+    height: 52px;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+  
+  .horizontal-border .div-wrapper {
+    position: relative;
+    height: 52px;
+  }
+  
+  .horizontal-border .text-wrapper {
+    width: 70px;
+    height: 17px;
+    top: 16px;
+    left: 12px;
+    font-family: "PingFang SC-Medium", Helvetica;
+    font-weight: 500;
+    color: #0000008c;
+    font-size: 13.6px;
+    line-height: 52px;
+    white-space: nowrap;
+    position: absolute;
+    letter-spacing: 0;
+  }
+  
+  .horizontal-border .link-wrapper {
+    width: 78px;
+    height: 52px;
+    left: 94px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .horizontal-border .div {
+    width: 54px;
+    height: 17px;
+    top: 16px;
+    left: 12px;
+    font-family: "PingFang SC-Medium", Helvetica;
+    font-weight: 500;
+    line-height: 52px;
+    position: absolute;
+    color: #0000008c;
+    font-size: 13.5px;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+  
+  .horizontal-border .item-2 {
+    width: 94px;
+    height: 52px;
+    left: 172px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .horizontal-border .item-3 {
+    width: 79px;
+    height: 52px;
+    left: 266px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .horizontal-border .text-wrapper-2 {
+    position: absolute;
+    width: 55px;
+    height: 17px;
+    top: 16px;
+    left: 12px;
+    font-family: "PingFang SC-Medium", Helvetica;
+    font-weight: 500;
+    color: #0000008c;
+    font-size: 13.8px;
+    letter-spacing: 0;
+    line-height: 52px;
+    white-space: nowrap;
+  }
+  
+  .horizontal-border .list-2 {
+    position: absolute;
+    width: 218px;
+    height: 22px;
+    top: 14px;
+    left: 1318px;
+  }
+  
+  .horizontal-border .item-link {
+    width: 54px;
+    height: 22px;
+    left: 24px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .horizontal-border .text-wrapper-3 {
+    width: 54px;
+    height: 22px;
+    top: -1px;
+    left: 0;
+    font-family: "PingFang SC-Regular", Helvetica;
+    font-weight: 400;
+    line-height: 22px;
+    position: absolute;
+    color: #0000008c;
+    font-size: 13.5px;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+  
+  .horizontal-border .item-link-2 {
+    width: 27px;
+    left: 102px;
+    position: absolute;
+    height: 22px;
+    top: 0;
+  }
+  
+  .horizontal-border .text-wrapper-4 {
+    width: 27px;
+    height: 22px;
+    top: -1px;
+    left: 0;
+    font-family: "PingFang SC-Regular", Helvetica;
+    font-weight: 400;
+    line-height: 22px;
+    position: absolute;
+    color: #0000008c;
+    font-size: 13.5px;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+  
+  .horizontal-border .item-link-3 {
+    width: 54px;
+    left: 152px;
+    position: absolute;
+    height: 22px;
+    top: 0;
+  }
+  
+  .horizontal-border .container {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 10px;
+    left: 1784px;
+  }
+  
+  .horizontal-border .img {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 10px;
+    left: 1824px;
+  }
+  
+  .horizontal-border .background {
+    position: absolute;
+    width: 232px;
+    height: 38px;
+    top: 6px;
+    left: 1544px;
+    background-color: #f6f6f6;
+    border-radius: 32px;
+  }
+  
+  .horizontal-border .SVG {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 11px;
+    left: 13px;
+  }
+  
+  .horizontal-border .input {
+    position: absolute;
+    width: 190px;
+    height: 20px;
+    top: 9px;
+    left: 29px;
+  }
+  
+  .horizontal-border .container-2 {
+    position: relative;
+    width: 185px;
+    height: 14px;
+    top: 3px;
+    left: 5px;
+  }
+  
+  .horizontal-border .text-wrapper-5 {
+    width: 61px;
+    height: 14px;
+    top: -1px;
+    left: 0;
+    font-family: "PingFang SC-Regular", Helvetica;
+    font-weight: 400;
+    color: #a0a0a0;
+    font-size: 11.6px;
+    line-height: normal;
+    position: absolute;
+    letter-spacing: 0;
+  }
