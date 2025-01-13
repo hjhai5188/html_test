@@ -1,13 +1,12 @@
-.horizontal-border {
+.horizontal-border { 
     position: relative;
     width: 1920px;
-    height: 52px;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+    height: 51px;
     border-color: #ececec;
+    border-bottom: 1px;
   }
   
-  .horizontal-border .link {
+  .horizontal-border .logo {
     position: absolute;
     width: 85px;
     height: 22px;
@@ -17,156 +16,53 @@
   
   .horizontal-border .list {
     position: absolute;
-    width: 345px;
-    height: 52px;
-    top: 0;
     left: 175px;
   }
   
   .horizontal-border .item {
-    width: 94px;
-    height: 52px;
-    left: 0;
-    position: absolute;
-    top: 0;
+    height: 51px;
+    padding: 0px 12px;
+    display: flex;
+    align-items: center;
+    align-self: auto;
+    gap: 24px;
   }
-  
-  .horizontal-border .div-wrapper {
-    position: relative;
-    height: 52px;
-  }
-  
+
   .horizontal-border .text-wrapper {
-    width: 70px;
-    height: 17px;
-    top: 16px;
-    left: 12px;
     font-family: "PingFang SC-Medium", Helvetica;
     font-weight: 500;
     color: #0000008c;
-    font-size: 13.6px;
-    line-height: 52px;
+    font-size: 14px;
+    line-height: 51px;
     white-space: nowrap;
-    position: absolute;
     letter-spacing: 0;
   }
-  
-  .horizontal-border .link-wrapper {
-    width: 78px;
-    height: 52px;
-    left: 94px;
-    position: absolute;
-    top: 0;
-  }
-  
-  .horizontal-border .div {
-    width: 54px;
-    height: 17px;
-    top: 16px;
-    left: 12px;
-    font-family: "PingFang SC-Medium", Helvetica;
-    font-weight: 500;
-    line-height: 52px;
-    position: absolute;
-    color: #0000008c;
-    font-size: 13.5px;
-    letter-spacing: 0;
-    white-space: nowrap;
-  }
-  
-  .horizontal-border .item-2 {
-    width: 94px;
-    height: 52px;
-    left: 172px;
-    position: absolute;
-    top: 0;
-  }
-  
-  .horizontal-border .item-3 {
-    width: 79px;
-    height: 52px;
-    left: 266px;
-    position: absolute;
-    top: 0;
-  }
-  
   .horizontal-border .text-wrapper-2 {
-    position: absolute;
-    width: 55px;
-    height: 17px;
-    top: 16px;
-    left: 12px;
-    font-family: "PingFang SC-Medium", Helvetica;
-    font-weight: 500;
+    font-family: "PingFang SC-Regular", Helvetica;
+    font-weight: 400;
+    line-height: 22px;
     color: #0000008c;
-    font-size: 13.8px;
+    font-size: 14px;
     letter-spacing: 0;
-    line-height: 52px;
-    white-space: nowrap;
   }
-  
+
+
   .horizontal-border .list-2 {
     position: absolute;
-    width: 218px;
-    height: 22px;
     top: 14px;
-    left: 1318px;
+    left: 1326px;
+    padding: 0px 12px ;
+    gap: 24px;
+    align-items: center;
+    display: flex;
   }
-  
+
   .horizontal-border .item-link {
-    width: 54px;
     height: 22px;
     left: 24px;
-    position: absolute;
     top: 0;
   }
-  
-  .horizontal-border .text-wrapper-3 {
-    width: 54px;
-    height: 22px;
-    top: -1px;
-    left: 0;
-    font-family: "PingFang SC-Regular", Helvetica;
-    font-weight: 400;
-    line-height: 22px;
-    position: absolute;
-    color: #0000008c;
-    font-size: 13.5px;
-    letter-spacing: 0;
-    white-space: nowrap;
-  }
-  
-  .horizontal-border .item-link-2 {
-    width: 27px;
-    left: 102px;
-    position: absolute;
-    height: 22px;
-    top: 0;
-  }
-  
-  .horizontal-border .text-wrapper-4 {
-    width: 27px;
-    height: 22px;
-    top: -1px;
-    left: 0;
-    font-family: "PingFang SC-Regular", Helvetica;
-    font-weight: 400;
-    line-height: 22px;
-    position: absolute;
-    color: #0000008c;
-    font-size: 13.5px;
-    letter-spacing: 0;
-    white-space: nowrap;
-  }
-  
-  .horizontal-border .item-link-3 {
-    width: 54px;
-    left: 152px;
-    position: absolute;
-    height: 22px;
-    top: 0;
-  }
-  
+
   .horizontal-border .container {
     position: absolute;
     width: 32px;
