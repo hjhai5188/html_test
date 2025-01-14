@@ -111,3 +111,149 @@
     top: 14px;
     left: 1348px;
 }
+
+.div-navbar-container {
+    position: relative;
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: flex-start; /* 从左到右排列 */
+    width: 1440px;
+    height: 47px;
+    padding: 0px 64px;
+}
+
+.div-navbar-container .selection {
+    display: flex;
+    width: 208px;
+    height: 47px;
+    align-items: center;
+
+}
+
+.div-navbar-container .reno13_left {
+    padding-right: 12px;
+    color: #0000004c;
+    font-family: "Helvetica-Regular", Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    white-space: nowrap;
+}
+
+.div-navbar-container .vl {
+        width: 0.1px; 
+        height: 24px; 
+        color: #0000004c; 
+}
+
+.div-navbar-container .reno13_right {
+    padding-left: 12px;
+    font-family: "Helvetica-Regular", Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    white-space: nowrap;
+}
+
+.div-navbar-container .svg_img {
+    position: absolute;
+    width: 16px;
+    height: 17px;
+    top: 10px;
+    left: 14px;
+    object-fit: cover;
+    }
+
+.div-navbar-container .div-navbar-right {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    width: 263px;
+    height: 47px;
+    top: 0;
+    left: 1113px;
+}
+
+.div-navbar-container .introduce {
+    position: absolute;
+    top: 6px;
+}
+
+.div-navbar-container .radius_frame{
+    position: absolute;
+    width: 75px;
+    height: 36px;
+    background-color: #f8f9fa;
+    border-radius: 35px;
+}
+
+
+.div-navbar-container .text_summary {
+    left: 36px;
+    font-family: "Helvetica-Regular", Helvetica;
+    color: #000000f2;
+    position: absolute;
+    top: 6px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.div-navbar-container .intro_logo {
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    width: 18px;
+    height: 18px;
+    
+ 
+}
+.div-navbar-container .data_logo {
+    position: absolute;
+    left: 85px;
+    top: 9px;
+    width: 18px;
+    height: 18px;
+    
+ 
+}
+
+.div-navbar-container .text_data {
+    left: 111px;
+    font-family: "Helvetica-Regular", Helvetica;
+    color: #000000bf;
+    position: absolute;
+    top: 6px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.div-navbar-container .blue_frame {
+    position: absolute;
+    width: 94px;
+    height: 36px;
+    top: 6px;
+    left: 170px;
+    background-color: #2cff73;
+    border-radius: 36px;
+}
+
+.div-navbar-container .instant_buy {
+    left: 20px;
+    font-family: "OPPOSans-S-Regular", Helvetica;
+    color: #000000f2;
+    position: absolute;
+    top: 7px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 22px;
+    white-space: nowrap;
+}
