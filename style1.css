@@ -112,14 +112,26 @@
     left: 1348px;
 }
 
+
+.scroll_keep {
+    width: 1440px;
+    height: auto; /* 模拟滚动范围 */
+    overflow: visible;
+}
+
+
+
 .div-navbar-container {
-    position: relative;
+    position: sticky;
+    top: 0;
     display: flex;
+    z-index: 10;
     align-items: center; /* 垂直居中 */
     justify-content: flex-start; /* 从左到右排列 */
     width: 1440px;
     height: 47px;
     padding: 0px 64px;
+    background-color: #FFFFFF;
 }
 
 .div-navbar-container .selection {
@@ -256,4 +268,137 @@
     letter-spacing: 0;
     line-height: 22px;
     white-space: nowrap;
+}
+
+
+
+
+
+
+
+.div-section-kv-w {
+    position: relative;
+    width: 1440px;
+    height: 1032px;
+    background-image: url(img/big_background.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.div-section-kv-w .overlap {
+    position: absolute;
+    width: 320px;
+    height: 290px;
+    top: 371px;
+    left: 64px;
+}
+
+.div-section-kv-w .div-relative-pc-w {
+    position: absolute;
+    width: 320px;
+    height: 290px;
+    top: 0;
+    left: 0;
+}
+
+.div-section-kv-w .text-wrapper {
+    position: absolute;
+    top: 41px;
+    left: 0;
+    font-family: "OPPOSans-S-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000f2;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: 40px;
+    white-space: nowrap;
+}
+
+.div-section-kv-w .div {
+    top: 90px;
+    font-family: "OPPOSans-S-Regular", Helvetica;
+    font-size: 68px;
+    letter-spacing: 0;
+    line-height: 76.2px;
+    position: absolute;
+    left: 0;
+    font-weight: 400;
+    color: #000000f2;
+    white-space: nowrap;
+}
+
+.div-section-kv-w .div-text-rgba {
+    position: absolute;
+    width: 320px;
+    height: 96px;
+    top: 194px;
+    left: 0;
+}
+
+.div-section-kv-w .overlap-group {
+    position: relative;
+    width: 216px;
+    height: 96px;
+    top: -1px;
+}
+
+.div-section-kv-w .text-wrapper-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "PingFang SC-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000f2;
+    font-size: 24px;
+    letter-spacing: 0.50px;
+    line-height: 31.9px;
+    white-space: nowrap;
+}
+
+.div-section-kv-w .text-wrapper-3 {
+    top: 32px;
+    font-family: "PingFang SC-Regular", Helvetica;
+    font-size: 24px;
+    letter-spacing: 0.50px;
+    line-height: 31.9px;
+    position: absolute;
+    left: 0;
+    font-weight: 400;
+    color: #000000f2;
+    white-space: nowrap;
+}
+
+.div-section-kv-w .text-wrapper-4 {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    font-family: "PingFang SC-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000f2;
+    font-size: 24px;
+    letter-spacing: 0.50px;
+    line-height: 31.9px;
+    white-space: nowrap;
+}
+
+.div-section-kv-w .img-object-contain {
+    position: absolute;
+    width: 140px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    background-image: url(img/OPPO\ AI.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.div-section-kv-w .img-absolute-object {
+    position: absolute;
+    width: 111px;
+    height: 39px;
+    top: 921px;
+    left: 1265px;
+    background-image: url(img/system.png);
+    background-size: cover;
+    background-position: 50% 50%;
 }
