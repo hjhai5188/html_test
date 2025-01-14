@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav {
+    width: 1440px;
+    height: 51px;
+    border:0px;
+    border-bottom: 1px;
+    border-color: rgb(236, 236, 236);
+    border-style: solid;
+    background-color:  rgba(0, 0, 0, 0);
+}
+.nav .img_logo {
+    position: absolute;
+    width: 85px;
+    height: 22px;
+    top: 14px;
+    left: 64px;
+}
+
+.nav .navbar {
+    margin: 0px 12px;
+    display: flex;
+    gap: 24px;
+    position: absolute;
+    height: 51px;
+    top: 0;
+    left: 175px;
+}
+
+.nav .text-settings {
+    font-family: "OPPOSans-S-Regular", Helvetica;
+    font-weight: 400;
+    color: #0000008c;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 51px;
+    white-space: nowrap;
+}
+
+.nav .navbar2 {
+    position: absolute;
+    display: flex;
+    gap: 24px;
+    top: 14px;
+    padding: 0px 12px;
+    left: 845px;
+}
+
+.nav .text-settings2 {
+    font-family: "Helvetica-Regular", Helvetica;
+    font-weight: 400;
+    color: #0000008c;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.nav .div-search {
+    position: absolute;
+    width: 232px;
+    height: 38px;
+    top: 6px;
+    left: 1064px;
+    background-color: #f6f6f6;
+    border-radius: 32px;
+    border: 1px solid;
+    border-color: transparent;
+}
+.nav .input {
+    position: absolute;
+    top: 9px;
+    left: 29px;
+}
+
+.nav .text-input {
+    margin-left: 5px;
+    font-family: "Helvetica-Regular", Helvetica;
+    font-weight: 400;
+    color: #757575;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
+.nav .search_img {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 11px;
+    left: 13px;
+}
+
+
+.nav .user_image {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 14px;
+    left: 1308px;
+}
+
+.nav .shop_logo {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 14px;
+    left: 1348px;
+}
