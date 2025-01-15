@@ -1,30 +1,67 @@
-<!doctype html>
-<html lang="">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>My test page</title>
-    <link href="styles.css/style.css" rel="stylesheet"/> 
-    <link
-  href="https://fonts.googleapis.com/css?family=Open+Sans"
-  rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>固定框架滚动效果</title>
+  <style>
+    body {
+      height: 200vh; /* 增加滚动区域 */
+      margin: 0;
+    }
 
-  </head>
-  <body>
-    <h1> Mozilla is so cool
-    </h1>
-    <img src="OPPO_files/images-ksp-pad-ksp-5-c2-1.png.avif" alt="My test image" />
+    .container {
+      position: fixed; /* 固定框架位置 */
+      top: 50%; /* 垂直居中 */
+      left: 50%; /* 水平居中 */
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      overflow: hidden; /* 裁剪内容 */
+      opacity: 1; /* 初始透明度 */
+      transition: opacity 0.5s ease, clip-path 0.5s ease; /* 平滑过渡 */
+      clip-path: inset(0 0 0 0); /* 初始不裁剪 */
+    }
 
-    <p>At Mozilla, we're a global community of</p>
+    .content {
+      position: absolute; /* 固定内容相对框架 */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(to bottom, orange, yellow);
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="box">
+    <div class="content">
+      这是固定的内容，不随边框变化
+    </div>
+  </div>
 
-    
-<ul>
-  <li>technologists</li>
-  <li>thinkers</li>
-  <li>builders</li>
-</ul>
+  <script>
+    window.addEventListener("scroll", () => {
+      const box = document.getElementById("box");
+      const scrollY = window.scrollY;
 
-<p id="my-id">working together…</p>
-
-  </body>
+      // 根据滚动位置调整透明度和裁剪
+      if (scrollY > 50 && scrollY <= 300) {
+        const opacity = 1 - (scrollY - 50) / 250; // 透明度从1到0
+        const clip = (scrollY - 50) / 2.5; // 渐渐裁剪底部
+        box.style.opacity = opacity.toFixed(2);
+        box.style.clipPath = `inset(0px 0px ${clip}px 0px)`; // 裁剪下边
+      } else if (scrollY > 300) {
+        box.style.opacity = 0;
+        box.style.clipPath = `inset(0px 0px 100px 0px)`; // 完全裁剪
+      } else {
+        box.style.opacity = 1;
+        box.style.clipPath = `inset(0px 0px 0px 0px)`; // 初始状态
+      }
+    });
+  </script>
+</body>
 </html>

@@ -48,40 +48,117 @@
         </div>
       </div>
 
-
-      <div class="div-section-kv-w">
-        <div class="overlap">
-          <div class="div-relative-pc-w">
-            <div class="text-wrapper">Reno13</div>
-            <div class="div">超美小直屏</div>
-            <div class="div-text-rgba">
-              <div class="overlap-group">
-                <div class="text-wrapper-2">AI 高清实况照片</div>
-                <div class="text-wrapper-3">双芯抢网</div>
-                <div class="text-wrapper-4">全系 IP69 满级防水</div>
-              </div>
-            </div>
+      <div class="main_introduce" id="mainIntroduce">
+        <div class="text_layout">
+          <div class="reno13_bg">Reno13</div>
+          <div class="reno13_bg2">超美小直屏</div>
+          <div class="detail_introduce">
+            <div class="text_introduce">AI 高清实况照片</div>
+            <div class="text_introduce">双芯抢网</div>
+            <div class="text_introduce">全系 IP69 满级防水</div>
           </div>
-          <div class="img-object-contain"></div>
+          <div class="oppo_ai"></div>
         </div>
-        <div class="img-absolute-object"></div>
+        <div class="oppo_system"></div>
       </div>
 
+      <div class="div-section-ksp-w">
+        <div class="card">
+          <div class="image"></div>
+          <div class="content">
+            <div class="title">超美小直屏</div>
+            <div class="description">质感金属中框</div>
+            <div class="description">一体式冷雕玻璃</div>
+            <div class="description">极窄黑边设计</div>
+          </div>
+        </div>
 
+        <div class="card">
+          <div class="image"></div>
+          <div class="content">
+            <div class="title">AI 高清实况照片</div>
+            <div class="description">柔光实况照片</div>
+            <div class="description">实况照片水印相框</div>
+          </div>
+        </div>
 
+        <div class="card">
+          <div class="image"></div>
+          <div class="content">
+            <div class="title">双芯抢网</div>
+            <div class="description">自研抢网芯片 X1</div>
+            <div class="description">游戏云计算专网</div>
+          </div>
+        </div>
 
+        <div class="card">
+          <div class="image"></div>
+          <div class="content">
+            <div class="title">IP69 满级防水</div>
+            <div class="description">水下相机</div>
+            <div class="description">IP69 & IP68 & IP66 满级防水</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="image"></div>
+          <div class="content">
+            <div class="title">天玑 8350 旗舰芯</div>
+            <div class="description">至高 16GB + 1TB 超大内存</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="image"></div>
+          <div class="content">
+            <div class="title">ColorOS 15</div>
+            <div class="description">超流畅 超智慧 超好用</div>
+            <div class="description">一碰互传</div>
+            <div class="description">一键问屏</div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-
-
-
- 
-
-
-
-
-
-
   </body>
+
+  <script>
+    const mainIntroduce = document.getElementById("mainIntroduce");
+    mainIntroduce.style.backgroundImage = `url('img/big_background.png')`;
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+
+      const elementHeight = mainIntroduce.offsetHeight;
+
+      if (scrollY >= 0 && scrollY <= elementHeight) {
+        const progress = scrollY / elementHeight;
+
+        mainIntroduce.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, ${progress.toFixed(
+          2
+        )}), rgba(0, 0, 0, ${progress.toFixed(
+          2
+        )})), url('img/big_background.png')`;
+      } else if (scrollY > elementHeight) {
+        mainIntroduce.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url('img/big_background.png')`;
+      }
+    });
+
+    const oppoAI = document.querySelector(".main_introduce .oppo_ai");
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const elementHeight = mainIntroduce.offsetHeight;
+      oppoAI.style.borderRadius = "8px";
+      if (scrollY >= 0 && scrollY <= elementHeight) {
+        const scrollY = window.scrollY;
+        const elementHeight = mainIntroduce.offsetHeight;
+        const progress = scrollY / elementHeight;
+
+        oppoAI.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, ${progress.toFixed(
+          2
+        )}), rgba(0, 0, 0, ${progress.toFixed(2)})), url('img/OPPO AI.png')`;
+      } else if (scrollY > elementHeight) {
+        mainIntroduce.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url('img/OPPO AI.png')`;
+      }
+    });
+  </script>
 </html>

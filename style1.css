@@ -4,9 +4,20 @@
     box-sizing: border-box;
 }
 
+@font-face{
+    font-family: 'OPPOSans-M';
+    src: url('OPPOSans-M.ttf');		
+}
+@font-face{
+    font-family: 'OPPOSans-R';
+    src: url('OPPOSans-R.ttf');		
+}
+
+
+
 .nav {
     width: 1440px;
-    height: 51px;
+    height: 52px;
     border:0px;
     border-bottom: 1px;
     border-color: rgb(236, 236, 236);
@@ -51,7 +62,7 @@
 }
 
 .nav .text-settings2 {
-    font-family: "Helvetica-Regular", Helvetica;
+    font-family: Helvetica;
     font-weight: 400;
     color: #0000008c;
     font-size: 14px;
@@ -79,7 +90,7 @@
 
 .nav .text-input {
     margin-left: 5px;
-    font-family: "Helvetica-Regular", Helvetica;
+    font-family:  Helvetica;
     font-weight: 400;
     color: #757575;
     font-size: 12px;
@@ -145,7 +156,7 @@
 .div-navbar-container .reno13_left {
     padding-right: 12px;
     color: #0000004c;
-    font-family: "Helvetica-Regular", Helvetica;
+    font-family:  Helvetica;
     font-weight: 400;
     font-size: 16px;
     letter-spacing: 0;
@@ -161,7 +172,7 @@
 
 .div-navbar-container .reno13_right {
     padding-left: 12px;
-    font-family: "Helvetica-Regular", Helvetica;
+    font-family:  Helvetica;
     font-weight: 400;
     font-size: 16px;
     letter-spacing: 0;
@@ -204,7 +215,7 @@
 
 .div-navbar-container .text_summary {
     left: 36px;
-    font-family: "Helvetica-Regular", Helvetica;
+    font-family:  Helvetica;
     color: #000000f2;
     position: absolute;
     top: 6px;
@@ -236,7 +247,7 @@
 
 .div-navbar-container .text_data {
     left: 111px;
-    font-family: "Helvetica-Regular", Helvetica;
+    font-family:  Helvetica;
     color: #000000bf;
     position: absolute;
     top: 6px;
@@ -276,16 +287,18 @@
 
 
 
-.div-section-kv-w {
-    position: relative;
+.main_introduce {
+    position: sticky;
+    top: 47px;
     width: 1440px;
     height: 1032px;
-    background-image: url(img/big_background.png);
+    background-image: url(img/images-kv-bg-c2-1.png.avif);
     background-size: cover;
     background-position: 50% 50%;
+    
 }
 
-.div-section-kv-w .overlap {
+.main_introduce .text_layout {
     position: absolute;
     width: 320px;
     height: 290px;
@@ -293,19 +306,11 @@
     left: 64px;
 }
 
-.div-section-kv-w .div-relative-pc-w {
+.main_introduce .reno13_bg {
     position: absolute;
-    width: 320px;
-    height: 290px;
-    top: 0;
+    top: 42px;
     left: 0;
-}
-
-.div-section-kv-w .text-wrapper {
-    position: absolute;
-    top: 41px;
-    left: 0;
-    font-family: "OPPOSans-S-Regular", Helvetica;
+    font-family: "OPPOSans-medium", Helvetica;
     font-weight: 400;
     color: #000000f2;
     font-size: 32px;
@@ -314,20 +319,22 @@
     white-space: nowrap;
 }
 
-.div-section-kv-w .div {
-    top: 90px;
-    font-family: "OPPOSans-S-Regular", Helvetica;
+.main_introduce .reno13_bg2 {
+    top: 94px;
+    font-family: "OPPOSans-medium", Helvetica;
     font-size: 68px;
     letter-spacing: 0;
-    line-height: 76.2px;
+    line-height: 76.16px;
     position: absolute;
+    tab-size: 8;
+    inline-size: 320px;
     left: 0;
     font-weight: 400;
     color: #000000f2;
     white-space: nowrap;
 }
 
-.div-section-kv-w .div-text-rgba {
+.main_introduce .detail_introduce {
     position: absolute;
     width: 320px;
     height: 96px;
@@ -335,17 +342,9 @@
     left: 0;
 }
 
-.div-section-kv-w .overlap-group {
-    position: relative;
-    width: 216px;
-    height: 96px;
-    top: -1px;
-}
 
-.div-section-kv-w .text-wrapper-2 {
-    position: absolute;
-    top: 0;
-    left: 0;
+
+.main_introduce .text_introduce {
     font-family: "PingFang SC-Regular", Helvetica;
     font-weight: 400;
     color: #000000f2;
@@ -355,33 +354,7 @@
     white-space: nowrap;
 }
 
-.div-section-kv-w .text-wrapper-3 {
-    top: 32px;
-    font-family: "PingFang SC-Regular", Helvetica;
-    font-size: 24px;
-    letter-spacing: 0.50px;
-    line-height: 31.9px;
-    position: absolute;
-    left: 0;
-    font-weight: 400;
-    color: #000000f2;
-    white-space: nowrap;
-}
-
-.div-section-kv-w .text-wrapper-4 {
-    position: absolute;
-    top: 64px;
-    left: 0;
-    font-family: "PingFang SC-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000f2;
-    font-size: 24px;
-    letter-spacing: 0.50px;
-    line-height: 31.9px;
-    white-space: nowrap;
-}
-
-.div-section-kv-w .img-object-contain {
+.main_introduce .oppo_ai {
     position: absolute;
     width: 140px;
     height: 30px;
@@ -392,7 +365,7 @@
     background-position: 50% 50%;
 }
 
-.div-section-kv-w .img-absolute-object {
+.main_introduce .oppo_system {
     position: absolute;
     width: 111px;
     height: 39px;
@@ -401,4 +374,113 @@
     background-image: url(img/system.png);
     background-size: cover;
     background-position: 50% 50%;
+}
+
+
+
+
+.div-section-ksp-w {
+    position: relative;
+    width: 1440px;
+    height: 1048px;
+    background-color: #ffffff;
+}
+
+.div-section-ksp-w .card {
+    position: absolute;
+    width: 432px;
+    height: 360px;
+    background-color: #eeecf0;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.div-section-ksp-w .card .image {
+    position: relative;
+    width: 416px;
+    height: 212px;
+    top: 8px;
+    left: 8px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+}
+
+.div-section-ksp-w .card .content {
+    position: absolute;
+    top: 220px;
+    left: 16px;
+    width: 400px;
+    font-family: "PingFang SC-Regular", Helvetica;
+}
+
+.div-section-ksp-w .card .content .title {
+    font-size: 24px;
+    line-height: 32px;
+    color: #000;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.div-section-ksp-w .card .content .description {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.55);
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.div-section-ksp-w .card:first-child {
+    top: 80px;
+    left: 64px;
+}
+
+.div-section-ksp-w .card:nth-child(2) {
+    top: 80px;
+    left: 504px;
+}
+
+.div-section-ksp-w .card:nth-child(3) {
+    top: 80px;
+    left: 944px;
+}
+
+.div-section-ksp-w .card:nth-child(4) {
+    top: 448px;
+    left: 64px;
+}
+
+.div-section-ksp-w .card:nth-child(5) {
+    top: 448px;
+    left: 504px;
+}
+
+.div-section-ksp-w .card:nth-child(6) {
+    top: 448px;
+    left: 944px;
+}
+
+/* Image background assignment */
+.div-section-ksp-w .card:nth-child(1) .image {
+    background-image: url(img/zhixiaoping.png);
+}
+
+.div-section-ksp-w .card:nth-child(2) .image {
+    background-image: url(img/AI\ gaoqing.png);
+}
+
+.div-section-ksp-w .card:nth-child(3) .image {
+    background-image: url(img/shuangxin.png);
+}
+
+.div-section-ksp-w .card:nth-child(4) .image {
+    background-image: url(img/IP69.png);
+}
+
+.div-section-ksp-w .card:nth-child(5) .image {
+    background-image: url(img/tianji.png);
+}
+
+.div-section-ksp-w .card:nth-child(6) .image {
+    background-image: url(img/coloros.png);
 }
