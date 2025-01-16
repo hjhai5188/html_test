@@ -57,15 +57,14 @@
             <div class="text_introduce">双芯抢网</div>
             <div class="text_introduce">全系 IP69 满级防水</div>
           </div>
-          <div class="oppo_ai"></div>
         </div>
+        <div class="oppo_ai"></div>
         <div class="oppo_system"></div>
       </div>
 
       <div class="six_images">
-
         <div class="card">
-          <div class="card-image" style="background-image: url('img/zhixiaoping.png');"></div>
+          <img class="card-image" src="img/zhixiaoping.png" />
           <div class="card-content">
             <div class="card-title">超美小直屏</div>
             <div class="hidden-text">
@@ -75,10 +74,9 @@
             </div>
           </div>
         </div>
-    
-        
+
         <div class="card">
-          <div class="card-image" style="background-image: url('img/AI gaoqing.png');"></div>
+          <img class="card-image" src="img/AI gaoqing.png" />
           <div class="card-content">
             <h3 class="card-title">AI 高清实况照片</h3>
             <div class="hidden-text">
@@ -87,10 +85,9 @@
             </div>
           </div>
         </div>
-    
-    
+
         <div class="card">
-          <div class="card-image" style="background-image: url('img/shuangxin.png');"></div>
+          <img class="card-image" src="img/shuangxin.png" />
           <div class="card-content">
             <h3 class="card-title">双芯抢网</h3>
             <div class="hidden-text">
@@ -100,7 +97,7 @@
           </div>
         </div>
         <div class="card">
-          <div class="card-image" style="background-image: url('img/IP69.png');"></div>
+          <img class="card-image" src="img/IP69.png" />
           <div class="card-content">
             <h3 class="card-title">IP69 满级防水</h3>
             <div class="hidden-text">
@@ -110,16 +107,16 @@
           </div>
         </div>
         <div class="card">
-          <div class="card-image" style="background-image: url('img/tianji.png');"></div>
+          <img class="card-image" src="img/tianji.png" />
           <div class="card-content">
             <h3 class="card-title">天玑 8350 旗舰芯</h3>
             <div class="hidden-text">
-            <p>至高 16GB + 1TB 超大内存</p>
-          </div>
+              <p>至高 16GB + 1TB 超大内存</p>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="card-image" style="background-image: url('img/coloros.png');"></div>
+          <img class="card-image" src="img/coloros.png" />
           <div class="card-content">
             <h3 class="card-title">ColorOS 15</h3>
             <div class="hidden-text">
@@ -129,10 +126,13 @@
             </div>
           </div>
         </div>
-    
-      
-    
-        
+      </div>
+
+      <div class="screen">
+        <img class="screen_img" src="img/screen_big_image.png" />
+        <div class="text_frame">
+          <div class="text_content">超美小直屏<br />这么美，还那么强</div>
+        </div>
       </div>
     </div>
   </body>
@@ -175,6 +175,25 @@
       } else if (scrollY > elementHeight) {
         mainIntroduce.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url('img/OPPO AI.png')`;
       }
+    });
+
+    const sixImagesSection = document.querySelector(".six_images");
+
+    window.addEventListener("scroll", () => {
+      // 获取容器的位置
+      const sectionHeight = sixImagesSection.offsetHeight;
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      // 计算滚动的相对位置
+      const sectionScrollProgress = Math.min(
+        Math.max((scrollY + windowHeight - 2179) / sectionHeight, 0),
+        1
+      );
+
+
+      const opacity = 1 - sectionScrollProgress;
+      sixImagesSection.style.opacity = opacity.toFixed(2);
     });
   </script>
 </html>

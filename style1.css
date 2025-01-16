@@ -128,6 +128,7 @@
     width: 1440px;
     height: auto; /* 模拟滚动范围 */
     overflow: visible;
+    background-color: #ffffff;
 }
 
 
@@ -143,6 +144,7 @@
     height: 47px;
     padding: 0px 64px;
     background-color: #FFFFFF;
+    
 }
 
 .div-navbar-container .selection {
@@ -358,8 +360,8 @@
     position: absolute;
     width: 140px;
     height: 30px;
-    top: 0;
-    left: 0;
+    top: 371px;
+    left: 64px;
     background-image: url(img/OPPO\ AI.png);
     background-size: cover;
     background-position: 50% 50%;
@@ -377,19 +379,17 @@
 }
 
 
-
-
-
 .six_images {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* 居中对齐 */
-    align-items: center; /* 垂直居中 */
-    gap: 24px; /* 设置间距 */
+    justify-content: center; 
+    align-items: center;
+    gap: 24px; 
     padding: 80px 0 160px 0;
-    background-color: #ffffff; /* 确保背景为白色 */
-    width: 100%; /* 使用百分比宽度，避免固定宽度造成问题 */
+    background-color: #ffffff;
+    width: 100%; 
+    height: 1048px;
     box-sizing: border-box;
 }
   
@@ -460,4 +460,49 @@
     transform: translate(0px, 5px) scale(0.97);
     height: 212px;
   }
+
+
+
+  .screen {
+    position: relative;
+    top: -80px;
+    width: 1440px;
+    height: 1100px;
+    align-items: center;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    overflow: hidden; 
+  }
   
+  .screen .screen_img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    object-fit: cover; 
+    display: block; 
+  }
+  
+  .screen .text_frame {
+    display: flex;
+    width: 1312px;
+    height: 152px;
+    margin: 0px 64px;
+    align-items: center;
+    justify-content: center;
+    position: absolute; 
+    top: 190px;
+
+  }
+  
+  .screen .text_content {
+    position: relative;
+    width: fit-content;
+    font-family: Helvetica, sans-serif; 
+    font-weight: 400;
+    color: #fffffff2;
+    font-size: 68px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 76px;
+  }
