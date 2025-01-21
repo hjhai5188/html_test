@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OPPO Reno效果</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: black;
+        overflow-x: hidden;
+      }
+
+      .container {
+        height: 3000px; /* 模拟滚动区域 */
+        position: relative;
+      }
+
+      .stage {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: black;
+      }
+
+      /* 遮罩层次 */
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #2d2d2d; /* 灰色背景 */
+        z-index: 3; /* 遮罩位于文字和未裁剪背景上方 */
+        clip-path: inset(50% 50%); /* 从中间边缘开始扩展 */
+        transition: clip-path 1s ease;
+      }
+
+      /* 背景图片的裁剪 */
+      .background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        background-image: url("img/screen_big_image.png"); /* 替换为背景图片路径 */
+        background-size: cover;
+        background-position: center;
+
+        transition: clip-path 1s ease, transform 1s ease;
+        z-index: 1; /* 确保裁剪后的图片在遮罩上方 */
+      }
+
+      /* 文字层次调整 */
+      .text-content {
+        position: absolute;
+        top: 75px;
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        z-index: 2; /* 位于遮罩下方 */
+      }
+
+      /* 侧边图片 */
+      .side-images {
+        position: absolute;
+        top: 58%;
+        left: 47%;
+        display: flex;
+        gap: 700px; /* 水平间距 */
+        transform: translate(-50%, -50%);
+        opacity: 0; /* 初始状态不可见 */
+        z-index: 4; /* 裁剪图片和侧边图片位于遮罩之上 */
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .side-images img {
+        width: 100px;
+        height: 100px;
+        transform: translateY(-100px);
+        transition: transform 0.8s ease;
+      }
+
+      .side-images img:nth-child(1) {
+        transform: translateY(-100px);
+      }
+
+      /* 滚动触发样式 */
+      .stage.scrolled .background {
+        position: absolute;
+        padding-bottom: 20px;
+        height: 700px;
+        z-index: 4;
+        clip-path: inset(25% 25% 0% 25%); /* 剪裁为中间部分 */
+        transform: translate(-50%, -50%) scale(0.8); /* 稍微放大 */
+      }
+
+      .stage.scrolled .overlay {
+        clip-path: inset(0 0); /* 灰色填满 */
+      }
+
+      .stage.images-visible .side-images {
+        opacity: 1;
+      }
+
+      .stage.images-visible .side-images img:nth-child(1) {
+        transform: translateY(0); /* 左侧图片进入 */
+      }
+
+      .stage.images-visible .side-images img:nth-child(2) {
+        transform: translateY(0); /* 右侧图片进入 */
+      }
+
+      .stage.text-visible .text-box {
+        opacity: 1;
+      }
+
+    .left_setting {
+        width: 300px;
+        height: 400px;
+        background-color: black;
+
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 场景区域 -->
+      <div class="stage">
+        <div class="text-content">超美小直屏<br />这么美，还那么强</div>
+        <div class="background"></div>
+        <!-- 背景图片 -->
+        <div class="overlay"></div>
+        <!-- 灰色填充 -->
+        <div class="side-images">
+          <div class="left_setting">
+            <img src="img/left_1.png" alt="左侧图片" />
+          </div>
+          <!-- 替换为左侧图片路径 -->
+          <img src="img/right_bot.png" alt="右侧图片" />
+          <!-- 替换为右侧图片路径 -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const stage = document.querySelector(".stage");
+
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+
+        // 阶段 1：灰色开始填充，覆盖文字
+        if (scrollY > windowHeight * 0.5) {
+          stage.classList.add("scrolled");
+        } else {
+          stage.classList.remove("scrolled");
+        }
+
+        // 阶段 2：两侧图片显示
+        if (scrollY > windowHeight * 1.2) {
+          stage.classList.add("images-visible");
+        } else {
+          stage.classList.remove("images-visible");
+        }
+      });
+    </script>
+  </body>
+</html>
