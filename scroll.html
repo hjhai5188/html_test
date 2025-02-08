@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	<link rel="stylesheet" href="index1.css" />
+</head>
+<body>
+  	<div class="main_view">
+      <div class="three_images_frame">
+        <div class="img_container">
+          <img class="images_3" alt="" src="img/3_imgs_1.png">
+        </div>
+      </div>
+      <div class="three_images_frame">
+        <div class="img_container">
+          <img class="images_3" alt="" src="img/3_imgs_2.png">
+        </div>
+      </div>
+      <div class="three_images_frame">
+        <div class="img_container">
+          <img class="images_3" alt="" src="img/3_imgs_3.png">
+        </div>
+      </div>
+  	</div>
+</body>
+
+ <script>
+  window.addEventListener('scroll', () => {
+  const containers = document.querySelectorAll('.img_container');
+
+  containers.forEach((container) => {
+    const image = container.querySelector('.images_3');
+    const containerTop = container.getBoundingClientRect().top;
+
+    // 当容器顶部进入视口开始放大
+    if (containerTop < 0) {
+      // 计算滚动比例 (300 为灵敏度参数)
+      const scrollFactor = Math.max(0, Math.min(1, -containerTop / 300));
+
+      // 动态调整图片缩放比例
+      const scale = 1 + scrollFactor * 0.2; // 调整放大倍率，最大 1.2 倍
+      image.style.transform = `scale(${scale})`;
+    } else {
+      // 恢复原始比例
+      image.style.transform = 'scale(1)';
+    }
+  });
+});
+
+</script>
+</html>

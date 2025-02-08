@@ -50,6 +50,7 @@
       </div>
 
       <div class="main_introduce" id="mainIntroduce">
+        <img class="big-background-img" id="bgImage" src="images-kv-bg-c2-1.png" />
         <div class="text_layout">
           <div class="reno13_bg">Reno13</div>
           <div class="reno13_bg2">超美小直屏</div>
@@ -193,7 +194,7 @@
                         </div>
 
                         <div class="text_frame_settings">
-                          <div class="font_frame" color-title-text="">
+                          <div class="font_frame" >
                             蝶影光刻工艺
                           </div>
                           <div color-desc-text="" class="font_frame_2">
@@ -240,32 +241,35 @@
       </div>
       <div class="main_view">
         <div class="three_images_frame">
-          <img class="images_3" alt="" src="img/3_imgs_1.png">
+          <div class="img_container" id="img-container">
+          <img class="images_3" id="image" alt="" src="img/3_imgs_1.png">
+        </div>
           <div class="first_big_text">
             <p style="margin: 0;">质感金属中框<br>够精致，够坚固</p>
             <div class="text_small">采用铝合金金属中框，精致质感好惊艳，强韧坚固靠得住。</div>
           </div>
     
           <div class="section_text_1">
-              <div class="section_next_text_1">3 倍强韧</div>
-              <div class="section_next_text_2">不惧重压</div>
+              <div class="section_next_1">3 倍强韧</div>
+              <div class="section_next_2">不惧重压</div>
           </div>
           <div class="section_text_2">
-              <div class="section_next_text_1">提升 36%</div>
-              <div class="section_next_text_2">抗弯折能力</div>
+              <div class="section_next_1">提升 36%</div>
+              <div class="section_next_2">抗弯折能力</div>
           </div>
-      </div>
-          <div class="three_images_frame">
-              <img class="images_3_right" alt="" src="img/3_imgs_2.png">
+    
+            <div class="img_container_right" id="img-container2">
+              <img class="images_3" alt="" id="image2" src="img/3_imgs_2.png">
+            </div>
               <div class="second_big_text">
                       <p style="margin: 0;">一体式冷雕玻璃<br>美得天衣无“缝”</p>
                       <div class="text_small">后盖采用整块玻璃一体冷雕塑形而成，严丝合缝，浑然一体。</div>
               </div>
               
+    
+            <div class="img_container" id="img-container3">
+            <img class="images_3" id="image3" alt="" src="img/3_imgs_3.png">
           </div>
-          <div class="three_images_frame">
-            <img class="images_3" alt="" src="img/3_imgs_3.png">
-            
             <div class="third_big_text">
                     <p style="margin: 0;">极窄黑边设计<br>正脸好看到没边</p>
                     <div class="text_small_2">极致的屏组黑边设计，让 Reno13 上边框仅 1.64mm，左右边框仅1.65mm，带来极致窄边的显示效果。</div>
@@ -273,7 +277,8 @@
         </div>
           
       </div>
-    
+      <div class="last_plate"></div>
+      
     
     
     
@@ -283,44 +288,23 @@
   </body>
 
   <script>
-    const mainIntroduce = document.getElementById("mainIntroduce");
-    mainIntroduce.style.backgroundImage = `url('img/big_background.png')`;
+const bgOverlay = document.createElement("div");
+bgOverlay.id = "bgOverlay";
+document.getElementById("mainIntroduce").appendChild(bgOverlay);
 
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const elementHeight = document.getElementById("mainIntroduce").offsetHeight;
 
-      const elementHeight = mainIntroduce.offsetHeight;
+  if (scrollY >= -47 && scrollY <= elementHeight) {
+    const progress = scrollY / elementHeight;
+    bgOverlay.style.background = `rgba(0, 0, 0, ${progress.toFixed(2)})`;
+  } else if (scrollY > elementHeight) {
+    bgOverlay.style.background = `rgba(0, 0, 0, 1)`;
+  }
+});
 
-      if (scrollY >= 0 && scrollY <= elementHeight) {
-        const progress = scrollY / elementHeight;
-
-        mainIntroduce.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, ${progress.toFixed(
-          2
-        )}), rgba(0, 0, 0, ${progress.toFixed(
-          2
-        )})), url('img/big_background.png')`;
-      } else if (scrollY > elementHeight) {
-        mainIntroduce.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url('img/big_background.png')`;
-      }
-    });
-
-    const oppoAI = document.querySelector(".main_introduce .oppo_ai");
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
-      const elementHeight = mainIntroduce.offsetHeight;
-      oppoAI.style.borderRadius = "8px";
-      if (scrollY >= 0 && scrollY <= elementHeight) {
-        const scrollY = window.scrollY;
-        const elementHeight = mainIntroduce.offsetHeight;
-        const progress = scrollY / elementHeight;
-
-        oppoAI.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, ${progress.toFixed(
-          2
-        )}), rgba(0, 0, 0, ${progress.toFixed(2)})), url('img/OPPO AI.png')`;
-      } else if (scrollY > elementHeight) {
-        mainIntroduce.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url('img/OPPO AI.png')`;
-      }
-    });
+    
 
     const sixImagesSection = document.querySelector(".six_images");
 
@@ -332,12 +316,61 @@
 
       // 计算滚动的相对位置
       const sectionScrollProgress = Math.min(
-        Math.max((scrollY + windowHeight - 2179) / sectionHeight, 0),
+        Math.max((scrollY + windowHeight - 1700) / sectionHeight*1.7, 0),
         1
       );
 
       const opacity = 1 - sectionScrollProgress;
       sixImagesSection.style.opacity = opacity.toFixed(2);
     });
+
+
+const maxScroll = 640;
+
+// 获取容器元素和图片
+const container1 = document.getElementById('img-container');
+const image1 = document.getElementById('image');
+const container2 = document.getElementById('img-container2');
+const image2 = document.getElementById('image2');
+const container3 = document.getElementById('img-container3');
+const image3 = document.getElementById('image3');
+
+// 计算并更新滚动效果
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY-2699.5;
+
+    // 第一张图片效果
+    const container1Top = container1.getBoundingClientRect().top;
+    if (container1Top <= window.innerHeight && container1Top + container1.offsetHeight >= 0) {
+        const scrolled1 = Math.min(scrollY, maxScroll);
+        const scrollFactor1 = scrolled1 / maxScroll;
+        container1.style.setProperty('clip-path', `inset(0px 0px ${scrolled1}px 0px)`, 'important');
+        const scale1 = 1.1 - scrollFactor1 * 0.1;
+        image1.style.setProperty('transform', `scale(${scale1})`, 'important');
+    }
+
+    // 第二张图片效果
+    const container2Top = container2.getBoundingClientRect().top;
+    if (container2Top <= window.innerHeight && container2Top + container2.offsetHeight >= 0) {
+        const scrolled2 = Math.min(scrollY - 640, maxScroll);
+        const scrollFactor2 = scrolled2 / maxScroll;
+        container2.style.setProperty('clip-path', `inset(0px 0px ${scrolled2}px 0px)`, 'important');
+        const scale2 = 1.1 - scrollFactor2 * 0.1;
+        image2.style.setProperty('transform', `scale(${scale2})`, 'important');
+    }
+
+    // 第三张图片效果
+    const container3Top = container3.getBoundingClientRect().top;
+    if (container3Top <= window.innerHeight && container3Top + container3.offsetHeight >= 0) {
+        const scrolled3 = Math.min(scrollY - 1280, maxScroll);
+        const scrollFactor3 = scrolled3 / maxScroll;
+        container3.style.setProperty('clip-path', `inset(0px 0px ${scrolled3}px 0px)`, 'important');
+        const scale3 = 1.1 - scrollFactor3 * 0.1;
+        image3.style.setProperty('transform', `scale(${scale3})`, 'important');
+    }
+});
+
+
   </script>
+
 </html>

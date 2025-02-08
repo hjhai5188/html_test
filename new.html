@@ -1,52 +1,271 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="initial-scale=1, width=device-width">
-  	
-  	<link rel="stylesheet"  href="index.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Image Resize</title>
+  <style>
+      .main_view {
+    width: 100%;
+    position: relative;
+    background-color: #181816;
+    height: auto;
+    text-align: left;
+    font-size: 53.44px;
+    color: rgba(255, 255, 255, 0.95);
+    font-family: Helvetica;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+  .third_big_text {
+    position: absolute;
+    top: 1500px;
+    left: 775px;
+    font-size: 48px;
+    letter-spacing: 0.5px;
+    line-height: 60px;
+    font-weight: 400;
+    font-family: Helvetica;
+    align-items: center;
+    height: 120px;
+}
+
+.second_big_text {
+    position: absolute;
+    top: 860px;
+    left: 70px;
+    font-size: 48px;
+    letter-spacing: 0.5px;
+    line-height: 60px;
+    font-weight: 400;
+    font-family: Helvetica;
+    align-items: center;
+    height: 120px;
+
+}
+
+
+.img_container_right {
+  position: sticky;
+        top: 0; /* 顶部固定 */
+        width: 50%;
+        height: 640px; /* 初始高度 */
+        overflow: hidden;
+        z-index: 1;
+        clip-path: inset(0px 0px 0px 0px); /* 初始状态无裁剪 */
+  left: 50%;
+}
+
+.section_next_1 {
+    position: relative;
+    font-size: 32px;
+    letter-spacing: 0.5px;
+    line-height: 40px;
+    font-weight: 400;
+    align-items: center;
+    width: auto;
+    height: 40px;
+}
+.section_next_2 {
+    position: relative;
+    margin-top: 8px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 22px;
+}
+.section_text_1 {
+    padding: 20px;
+    position: absolute;
+    top: 450px;
+    right: 359px;
+    bottom: 60px;
+    left: 775px;
+    width: 252px;
+    height: 70px;
+    border-radius: 8px;
+    background-color: #000;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.section_text_2 {
+    padding: 20px;
+    position: absolute;
+    top: 450px;
+    bottom: 60px;
+    left: 1075px;
+    border-radius: 8px;
+    background-color: #000;
+    width: 252px;
+    height: 70px;
+    box-sizing: content-box;
+}
+.first_big_text {
+    position: absolute;
+    top: 60px;
+    left: 775px;
+    font-size: 48px;
+    letter-spacing: 0.5px;
+    line-height: 60px;
+    font-weight: 400;
+    font-family: Helvetica;
+    align-items: center;
+    height: 120px;
+}
+.text_small {
+    margin-top: 24px;
+    position: relative;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    height: 26px;
+    flex-shrink: 0;
+    font-size: 18px;
+}
+.text_small_2 {
+    margin-top: 24px;
+    position: relative;
+    letter-spacing: 0.5px;
+    line-height: 26px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    height: 52px;
+    flex-shrink: 0;
+    font-size: 18px;
+    width: 540px;
+}
+
+    .three_images_frame {
+        position: relative;
+        width: 100%;
+        height: 2560px;
+    }
+
+    .img_container {
+        position: sticky;
+        top: 0; /* 顶部固定 */
+        width: 50%;
+        height: 640px; /* 初始高度 */
+        overflow: hidden;
+        z-index: 1;
+        clip-path: inset(0px 0px 0px 0px); /* 初始状态无裁剪 */
+    }
+
+    .images_3 {
+      width: 100%; /* 让 scale(1.1) 计算正确 */
+    height: 100%;
+    transform: scale(1.1);
+        object-position: center;
+    }
+    .last_plate {
+      position: relative;
+      margin-top: -640px;
+      background-color: rgb(19, 19, 17);
+        height: 2000px;
+    }
+    
+  </style>
 </head>
 <body>
-  	
-  	<div class="main_view">
-      <div class="three_images_frame">
-        <img class="images_3" alt="" src="img/3_imgs_1.png">
-        <div class="first_big_text">
-          <p style="margin: 0;">质感金属中框<br>够精致，够坚固</p>
-          <div class="text_small">采用铝合金金属中框，精致质感好惊艳，强韧坚固靠得住。</div>
+  <div class="main_view">
+    <div class="three_images_frame">
+      <div class="img_container" id="img-container">
+      <img class="images_3" id="image" alt="" src="img/3_imgs_1.png">
+    </div>
+      <div class="first_big_text">
+        <p style="margin: 0;">质感金属中框<br>够精致，够坚固</p>
+        <div class="text_small">采用铝合金金属中框，精致质感好惊艳，强韧坚固靠得住。</div>
+      </div>
+
+      <div class="section_text_1">
+          <div class="section_next_1">3 倍强韧</div>
+          <div class="section_next_2">不惧重压</div>
+      </div>
+      <div class="section_text_2">
+          <div class="section_next_1">提升 36%</div>
+          <div class="section_next_2">抗弯折能力</div>
+      </div>
+
+        <div class="img_container_right" id="img-container2">
+          <img class="images_3" alt="" id="image2" src="img/3_imgs_2.png">
         </div>
-  
-        <div class="section_text_1">
-            <div class="section_next_1">3 倍强韧</div>
-            <div class="section_next_2">不惧重压</div>
-        </div>
-        <div class="section_text_2">
-            <div class="section_next_1">提升 36%</div>
-            <div class="section_next_2">抗弯折能力</div>
+          <div class="second_big_text">
+                  <p style="margin: 0;">一体式冷雕玻璃<br>美得天衣无“缝”</p>
+                  <div class="text_small">后盖采用整块玻璃一体冷雕塑形而成，严丝合缝，浑然一体。</div>
+          </div>
+          
+
+        <div class="img_container" id="img-container3">
+        <img class="images_3" id="image3" alt="" src="img/3_imgs_3.png">
+      </div>
+        <div class="third_big_text">
+                <p style="margin: 0;">极窄黑边设计<br>正脸好看到没边</p>
+                <div class="text_small_2">极致的屏组黑边设计，让 Reno13 上边框仅 1.64mm，左右边框仅1.65mm，带来极致窄边的显示效果。</div>
         </div>
     </div>
-    		<div class="three_images_frame">
-      			<img class="images_3_right" alt="" src="img/3_imgs_2.png">
-      			<div class="second_big_text">
-          					<p style="margin: 0;">一体式冷雕玻璃<br>美得天衣无“缝”</p>
-                    <div class="text_small">后盖采用整块玻璃一体冷雕塑形而成，严丝合缝，浑然一体。</div>
-      			</div>
-      			
-    		</div>
-        <div class="three_images_frame">
-          <img class="images_3" alt="" src="img/3_imgs_3.png">
-          
-          <div class="third_big">
-                  <p style="margin: 0;">极窄黑边设计<br>正脸好看到没边</p>
-                  <div class="text_small_2">极致的屏组黑边设计，让 Reno13 上边框仅 1.64mm，左右边框仅1.65mm，带来极致窄边的显示效果。</div>
-          </div>
-      </div>
-    		
-  	</div>
-  	
-  	
-  	
-  	
+      
+  </div>
+  <div class="last_plate"></div>
+
+
+  <script>
+const container1 = document.getElementById('img-container');
+const image1 = document.getElementById('image');
+
+
+const maxScroll = 640;
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    // 处理第一张图片
+    const scrolled1 = Math.min(scrollY, maxScroll);
+    const scrollFactor1 = scrolled1 / maxScroll;
+    container1.style.setProperty('clip-path', `inset(0px 0px ${scrolled1}px 0px)`, 'important');
+    const scale1 = 1.1 - scrollFactor1 * 0.1;
+    image1.style.setProperty('transform', `scale(${scale1})`, 'important');
+    
+});
+const container2 = document.getElementById('img-container2');
+const image2 = document.getElementById('image2');
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY-640;
+    const scrolled2 = Math.min(scrollY, maxScroll);
+    const scrollFactor2 = scrolled2 / maxScroll;
+    container2.style.setProperty('clip-path', `inset(0px 0px ${scrolled2}px 0px)`, 'important');
+    const scale2 = 1.1 - scrollFactor2 * 0.1;
+    image2.style.setProperty('transform', `scale(${scale2})`, 'important');
+    
+});
+const container3 = document.getElementById('img-container3');
+const image3 = document.getElementById('image3');
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY-1280;
+    const scrolled3 = Math.min(scrollY, maxScroll);
+    const scrollFactor3 = scrolled3 / maxScroll;
+    container3.style.setProperty('clip-path', `inset(0px 0px ${scrolled3}px 0px)`, 'important');
+    const scale3 = 1.1 - scrollFactor3 * 0.1;
+    image3.style.setProperty('transform', `scale(${scale3})`, 'important');
+    
+});
+
+
+  </script>
+
 </body>
 </html>
