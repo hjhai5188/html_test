@@ -1,175 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OPPO Reno效果</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: black;
-        overflow-x: hidden;
-      }
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	<style>
 
-      .container {
-        height: 3000px; /* 模拟滚动区域 */
-        position: relative;
-      }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main_view {
+  width: 100%;
+  position: relative;
+  background-color: #181816;
+  height: auto;
+  text-align: left;
 
-      .stage {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        background: black;
-      }
+  color: rgba(255, 255, 255, 0.95);
+  font-family: Helvetica;
+}
 
-      /* 遮罩层次 */
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #2d2d2d; /* 灰色背景 */
-        z-index: 3; /* 遮罩位于文字和未裁剪背景上方 */
-        clip-path: inset(50% 50%); /* 从中间边缘开始扩展 */
-        transition: clip-path 1s ease;
-      }
+.third_big_text {
+  position: absolute;
+  top: 1500px;
+  left: 775px;
+  font-size: 48px;
+  letter-spacing: 0.5px;
+  line-height: 60px;
+  font-weight: 400;
+  font-family: Helvetica;
+  align-items: center;
+  height: 120px;
+}
 
-      /* 背景图片的裁剪 */
-      .background {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        transform: translate(-50%, -50%);
-        background-image: url("img/screen_big_image.png"); /* 替换为背景图片路径 */
-        background-size: cover;
-        background-position: center;
+.second_big_text {
+  position: absolute;
+  top: 860px;
+  left: 70px;
+  font-size: 48px;
+  letter-spacing: 0.5px;
+  line-height: 60px;
+  font-weight: 400;
+  font-family: Helvetica;
+  align-items: center;
+  height: 120px;
+}
 
-        transition: clip-path 1s ease, transform 1s ease;
-        z-index: 1; /* 确保裁剪后的图片在遮罩上方 */
-      }
+.img_container_right {
+  position: sticky;
+  top: 0; /* 顶部固定 */
+  width: 50%;
+  height: 640px; /* 初始高度 */
+  overflow: hidden;
+  z-index: 1;
+  clip-path: inset(0px 0px 0px 0px); /* 初始状态无裁剪 */
+  left: 50%;
+}
 
-      /* 文字层次调整 */
-      .text-content {
-        position: absolute;
-        top: 75px;
-        color: white;
-        font-size: 2rem;
-        text-align: center;
-        z-index: 2; /* 位于遮罩下方 */
-      }
+.section_next_1 {
+  position: relative;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+  line-height: 40px;
+  font-weight: 400;
+  align-items: center;
+  width: auto;
+  height: 40px;
+}
+.section_next_2 {
+  position: relative;
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 22px;
+}
+.section_text_1 {
+  padding: 20px;
+  position: absolute;
+  top: 450px;
+  right: 359px;
+  bottom: 60px;
+  left: 775px;
+  width: 252px;
+  height: 70px;
+  border-radius: 8px;
+  background-color: #000;
+  overflow: hidden;
+  box-sizing: content-box;
+}
 
-      /* 侧边图片 */
-      .side-images {
-        position: absolute;
-        top: 58%;
-        left: 47%;
-        display: flex;
-        gap: 700px; /* 水平间距 */
-        transform: translate(-50%, -50%);
-        opacity: 0; /* 初始状态不可见 */
-        z-index: 4; /* 裁剪图片和侧边图片位于遮罩之上 */
-        transition: opacity 0.8s ease, transform 0.8s ease;
-      }
-      .side-images img {
-        width: 100px;
-        height: 100px;
-        transform: translateY(-100px);
-        transition: transform 0.8s ease;
-      }
+.section_text_2 {
+  padding: 20px;
+  position: absolute;
+  top: 450px;
+  bottom: 60px;
+  left: 1075px;
+  border-radius: 8px;
+  background-color: #000;
+  width: 252px;
+  height: 70px;
+  box-sizing: content-box;
+}
+.first_big_text {
+  position: absolute;
+  top: 60px;
+  left: 775px;
+  font-size: 48px;
+  letter-spacing: 0.5px;
+  line-height: 60px;
+  font-weight: 400;
+  font-family: Helvetica;
+  align-items: center;
+  height: 120px;
+}
+.text_small {
+  margin-top: 24px;
+  position: relative;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  height: 26px;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+.text_small_2 {
+  margin-top: 24px;
+  position: relative;
+  letter-spacing: 0.5px;
+  line-height: 26px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  height: 52px;
+  flex-shrink: 0;
+  font-size: 18px;
+  width: 540px;
+}
 
-      .side-images img:nth-child(1) {
-        transform: translateY(-100px);
-      }
+.three_images_frame {
+  position: relative;
+  width: 100%;
+  height: 2560px;
+}
 
-      /* 滚动触发样式 */
-      .stage.scrolled .background {
-        position: absolute;
-        padding-bottom: 20px;
-        height: 700px;
-        z-index: 4;
-        clip-path: inset(25% 25% 0% 25%); /* 剪裁为中间部分 */
-        transform: translate(-50%, -50%) scale(0.8); /* 稍微放大 */
-      }
+.img_container {
+  position: sticky;
+  top: 0; /* 顶部固定 */
+  width: 50%;
+  height: 640px; /* 初始高度 */
+  overflow: hidden;
+  z-index: 1;
+  clip-path: inset(0px 0px 0px 0px); /* 初始状态无裁剪 */
+  
+}
 
-      .stage.scrolled .overlay {
-        clip-path: inset(0 0); /* 灰色填满 */
-      }
+.images_3 {
+  width: 100%; /* 让 scale(1.1) 计算正确 */
+  height: 100%;
+  transform: scale(1.1);
+  object-position: center;
+  object-fit: cover;
+}
 
-      .stage.images-visible .side-images {
-        opacity: 1;
-      }
+</style>
 
-      .stage.images-visible .side-images img:nth-child(1) {
-        transform: translateY(0); /* 左侧图片进入 */
-      }
+</head>
+<body>
+  <!-- 添加2000px高度的div -->
+  <div style="height: 3000px;"></div>
 
-      .stage.images-visible .side-images img:nth-child(2) {
-        transform: translateY(0); /* 右侧图片进入 */
-      }
-
-      .stage.text-visible .text-box {
-        opacity: 1;
-      }
-
-    .left_setting {
-        width: 300px;
-        height: 400px;
-        background-color: black;
-
-    }
-
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <!-- 场景区域 -->
-      <div class="stage">
-        <div class="text-content">超美小直屏<br />这么美，还那么强</div>
-        <div class="background"></div>
-        <!-- 背景图片 -->
-        <div class="overlay"></div>
-        <!-- 灰色填充 -->
-        <div class="side-images">
-          <div class="left_setting">
-            <img src="img/left_1.png" alt="左侧图片" />
+  <div class="main_view">
+        <div class="three_images_frame">
+          <div class="img_container" id="img-container">
+          <img class="images_3" id="image" alt="" src="img/3_imgs_1.png">
+        </div>
+          <div class="first_big_text">
+            <p style="margin: 0;">质感金属中框<br>够精致，够坚固</p>
+            <div class="text_small">采用铝合金金属中框，精致质感好惊艳，强韧坚固靠得住。</div>
           </div>
-          <!-- 替换为左侧图片路径 -->
-          <img src="img/right_bot.png" alt="右侧图片" />
-          <!-- 替换为右侧图片路径 -->
+    
+          <div class="section_text_1">
+              <div class="section_next_1">3 倍强韧</div>
+              <div class="section_next_2">不惧重压</div>
+          </div>
+          <div class="section_text_2">
+              <div class="section_next_1">提升 36%</div>
+              <div class="section_next_2">抗弯折能力</div>
+          </div>
+    
+            <div class="img_container_right" id="img-container2">
+              <img class="images_3" alt="" id="image2" src="img/3_imgs_2.png">
+            </div>
+              <div class="second_big_text">
+                      <p style="margin: 0;">一体式冷雕玻璃<br>美得天衣无“缝”</p>
+                      <div class="text_small">后盖采用整块玻璃一体冷雕塑形而成，严丝合缝，浑然一体。</div>
+              </div>
+              
+    
+            <div class="img_container" id="img-container3">
+            <img class="images_3" id="image3" alt="" src="img/3_imgs_3.png">
+          </div>
+            <div class="third_big_text">
+                    <p style="margin: 0;">极窄黑边设计<br>正脸好看到没边</p>
+                    <div class="text_small_2">极致的屏组黑边设计，让 Reno13 上边框仅 1.64mm，左右边框仅1.65mm，带来极致窄边的显示效果。</div>
+            </div>
         </div>
       </div>
-    </div>
+	  <div style="height: 2000px;"></div>
+</body>
+<script>
 
-    <script>
-      const stage = document.querySelector(".stage");
+const container1 = document.getElementById("img-container");
+const image1 = document.getElementById("image");
+const container2 = document.getElementById("img-container2");
+const image2 = document.getElementById("image2");
+const container3 = document.getElementById("img-container3");
+const image3 = document.getElementById("image3");
+const container = document.getElementById('img-container'); // 假设你已经选中了元素
+document.documentElement.scrollTop = 0;
 
-      window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
 
-        // 阶段 1：灰色开始填充，覆盖文字
-        if (scrollY > windowHeight * 0.5) {
-          stage.classList.add("scrolled");
-        } else {
-          stage.classList.remove("scrolled");
-        }
+// 元素相对于body的offsetTop
+function getElementAbsPos(e) {
+  // 获取元素的边界位置相对于视口
+  const rect = e.getBoundingClientRect();
+  
+  // 获取当前滚动距离（文档的滚动位置）
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
-        // 阶段 2：两侧图片显示
-        if (scrollY > windowHeight * 1.2) {
-          stage.classList.add("images-visible");
-        } else {
-          stage.classList.remove("images-visible");
-        }
-      });
-    </script>
-  </body>
+  // 计算绝对位置：相对于文档的顶部和左侧
+  const top = rect.top + scrollTop;
+  const left = rect.left + scrollLeft;
+
+  return { top: top, left: left };
+}
+
+function getElementTop(elem) {
+  const rect = elem.getBoundingClientRect(); // 获取元素大小、位置等信息
+
+  return  window.pageYOffset; // 返回元素顶部距离页面顶部的距离
+}
+  console.log('高度', getElementTop(container));
+
+  const fit_height=getElementTop(container);
+    const maxScroll = 640;
+
+// 获取容器元素和图片
+
+var a=fit_height;
+
+// 直接输出元素的具体位置
+
+// 计算滚动效果
+window.addEventListener("scroll", () => {
+  const scrollY = Math.max(0, window.scrollY -a); // 确保 scrollY 不能小于 0
+
+  function updateImageEffect(container, image, offset) {
+    const containerTop = container.getBoundingClientRect().top;
+    if (containerTop <= window.innerHeight && containerTop + container.offsetHeight >= 0) {
+      const scrolled = Math.min(Math.max(scrollY - offset, 0), maxScroll);
+      const scrollFactor = scrolled / maxScroll;
+
+      // 适当调整 clip-path 避免过度裁剪
+      container.style.setProperty("clip-path", `inset(0px 0px ${scrolled}px 0px)`, "important");
+
+      // 调整缩放范围，防止图片超出容器
+      const scale = 1.1 - scrollFactor * 0.05;
+      image.style.setProperty("transform", `scale(${scale})`, "important");
+    }
+  }
+
+  updateImageEffect(container1, image1, 0);
+  updateImageEffect(container2, image2, 640);
+  updateImageEffect(container3, image3, 1280);
+});
+
+	function getElementTop(elem) {
+  const rect = elem.getBoundingClientRect(); // 获取元素大小、位置等信息
+
+  return rect.top + window.pageYOffset; // 返回元素顶部距离页面顶部的距离
+}
+  console.log('高度', getElementTop(container));
+
+  window.onload = function() {
+    // 等待页面完全加载后再执行
+    window.scrollTo(0, 0);  // 使用 scrollTo 使页面滚动到顶部
+    document.body.scrollTop = 0;  // 确保文档顶部位置为 0
+    document.documentElement.scrollTop = 0;  // 对于某些浏览器使用 documentElement
+};
+</script>
+
 </html>
